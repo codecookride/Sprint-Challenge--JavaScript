@@ -32,11 +32,18 @@ Edit this document to include your answers after each question. Make sure to lea
 
 2. What is the difference between a function and a method?
 
+a method is a function inside an object.
+
 3. What is closure?
+
+closure is a complet set of a function and it variables all conecting correctly 
 
 4. Describe the four rules of the 'this' keyword.
 
+default=window implicit= oblect before dot binding explicit=using methods new=creates new object
+
 5. Why do we need super() in an extended class?
+it replaces the .call to actually bring everything over from parent
 
 ## Project Set up
 
