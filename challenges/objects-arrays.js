@@ -73,14 +73,15 @@ const graduates = [
 
 Once you have the new array created, sort the universities alphabetically and log the result. */
 
-function getuniversities(graduates) {
-  const universities= [];
-  for (let i=0; i < graduates.length; i++)
-  universities.push(graduates[i].university);
-  }
-return universities;
-}
 
+const universities =[];
+graduates.forEach(function(graduates) {
+     universities.push(graduates.university);
+    
+    });
+    
+
+console.log (universities.sort());
 
 
 
@@ -92,29 +93,26 @@ The resulting contact information strings should have a space between the first 
 
 */
 
-function getcontacts(graduates) {
   const contactInfo = [];
   graduates.forEach(function(graduates) {
      contactInfo.push(`${graduates.first_name} ${graduates.email}`);
   
   });
-  return console.log (contactInfo);
-}
+  console.log (contactInfo);
+
 
 
 /* Request 3: Find out how many universities have the string "Uni" included in their name. Create a new array called unisWithUni that contains them all. This will be an array of objects. Log the result. */
 
-function getUni(graduates) {
-  const unisWitchUni = [];
-  
-    
-    for (let i = 0; i < graduates.length; i++) {
-      if (graduates[i].university.includes("uni")) {
-        unisWitchUni.push(graduates[i]);
-      }
-    };
-  return console.log (unisWitchUni);
-}
+
+
+
+ const unisWitchUni = graduates.filter(function(graduates) {
+  return graduates.university.includes(uni);});
+
+
+  console.log (unisWitchUni);
+
 
 
 
@@ -174,10 +172,6 @@ The zoos are concerned about animals with a lower population count. Using filter
   const lowPopulationAnimals = zooAnimals.filter(function(zooAnimals) {
     return zooAnimals.population < 5});
  
-
-
-
-
 
 console.log(lowPopulationAnimals);
 
