@@ -10,7 +10,7 @@ var trex = {
   diet:"carnivorous",
   weight:"7000kg",
   length:"12m",
-  period:"Late Cretaceous"
+  period:"Late Cretaceous",
   roar: function () {
     return "RAWERSRARARWERSARARARRRR!";
   }
@@ -76,9 +76,9 @@ Once you have the new array created, sort the universities alphabetically and lo
 function getuniversities(graduates) {
   const universities= [];
   for (let i=0; i < graduates.length; i++)
-  {graduates.push(graduates[i].university)
+  universities.push(graduates[i].university);
   }
-return console.log(universities);
+return universities;
 }
 
 
@@ -94,8 +94,8 @@ The resulting contact information strings should have a space between the first 
 
 function getcontacts(graduates) {
   const contactInfo = [];
-  graduates.forEach(function(student) {
-     contactInfo.push(`${student.first_name} ${student.email}`);
+  graduates.forEach(function(graduates) {
+     contactInfo.push(`${graduates.first_name} ${graduates.email}`);
   
   });
   return console.log (contactInfo);
@@ -106,15 +106,13 @@ function getcontacts(graduates) {
 
 function getUni(graduates) {
   const unisWitchUni = [];
-  graduates.forEach(function(student) {
+  
     
     for (let i = 0; i < graduates.length; i++) {
       if (graduates[i].university.includes("uni")) {
         unisWitchUni.push(graduates[i]);
       }
-    }
-    
-  });
+    };
   return console.log (unisWitchUni);
 }
 
@@ -144,14 +142,12 @@ The zoos want to display both the scientific name and the animal name in front o
 */
 
 
-function getbothNames(zooAnimals) {
-  const displayNames = [];
-  zooAnimals.forEach(function(animal) {
-     displayNames.push(`name:${animal.animal_name}, Scientific:${animal.scientific_name}.`);
-  
-  });
-  return console.log(displayNames);
-}
+const displayNames =[];
+zooAnimals.forEach(function(zooAnimals) {
+     displayNames.push(`name:${zooAnimals.animal_name}, Scientific:${zooAnimals.scientific_name}.`);});
+    
+
+console.log (displayNames);
 
 
 
@@ -162,15 +158,11 @@ The zoos need a list of all their animal's names (animal_name only) converted to
 */
 
 
-function firstNamelowercase(zooAnimals) {
+
   let lowCaseAnimalNames = [];
-  zooAnimals.map(function(animal) {
-    lowCaseAnimalNames.push(`${animal.animal_name.toLowerCase()}`);
+  zooAnimals.map(function(zooAnimals) {
+    lowCaseAnimalNames.push(`${zooAnimals.animal_name.toLowerCase()}`);
   });
-  return lowCaseAnimalNames;
-  }
-
-
 
 console.log(lowCaseAnimalNames);
 
@@ -179,11 +171,10 @@ console.log(lowCaseAnimalNames);
 The zoos are concerned about animals with a lower population count. Using filter, create a new array of objects called lowPopulationAnimals which contains only the animals with a population less than 5.
 
 */
-function getRunnersByTShirtSize(zooAnimals) {
-  let lowPopulationAnimals = runners.filter(function(item) {
-    return item.population < 5});
-  return lowPopulationAnimals;
-}
+  const lowPopulationAnimals = zooAnimals.filter(function(zooAnimals) {
+    return zooAnimals.population < 5});
+ 
+
 
 
 
@@ -199,12 +190,12 @@ The zoos need to know their total animal population across the United States. Fi
 
 
 
-function tallyUpDonations(zooAnimals) {
+
   const populationTotal = zooAnimals.reduce(function(sum, order)  {
     return sum + order.population;
   },0);
-  return populationTotal;
-}
+  console.log (populationTotal);
+
 
 /*
 
